@@ -9,12 +9,20 @@
   <body>
     <h1>Create an account</h1>
     <form>
-      <label for="email">Email</label>
-      <input id="email" />
+      <label for="email">Email<span aria-hidden="true">*</span></label>
+      <input id="email" aria-describedby="emailError" type="email" required />
+      <div id="emailError">Please fill in your email</div>
 
-      <label for="password">Password</label>
-      <input id="password" />
-
+      <label for="password">Password<span aria-hidden="true">*</span></label>
+      <input
+        id="password"
+        aria-describedby="passwordError"
+        type="password"
+        pattern=".*\d.*"
+        minlength="8"
+        required
+      />
+      <div id="passwordError">Please enter the correct password</div>
       <button>Sign up</button>
     </form>
     <script src="index.js"></script>
